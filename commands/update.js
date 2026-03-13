@@ -186,8 +186,8 @@ async function restartProcess(sock, chatId, message) {
     // Panels usually auto-restart when the process exits.
     // Exit after a short delay to allow the above message to flush.
     setTimeout(() => {
-        process.exit(0);
-    }, 500);
+        process.exit(1);
+    }, 3000);
 }
 
 async function updateCommand(sock, chatId, message, zipOverride) {
