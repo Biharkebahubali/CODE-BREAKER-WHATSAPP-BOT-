@@ -237,7 +237,7 @@ Join our channel for updates:`;
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363161513685998@newsletter',
+                        newsletterJid: '120363424488902820@newsletter',
                         newsletterName: 'CODE_BREAKER',
                         serverMessageId: -1
                     }
@@ -251,7 +251,7 @@ Join our channel for updates:`;
                     forwardingScore: 1,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363161513685998@newsletter',
+                        newsletterJid: '120363424488902820@newsletter',
                         newsletterName: 'CODE_BREAKER by Vikram_Laheri_',
                         serverMessageId: -1
                     } 

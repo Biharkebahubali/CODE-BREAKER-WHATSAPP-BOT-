@@ -1,13 +1,12 @@
 const moment = require('moment-timezone');
 const fetch = require('node-fetch');
-const fs = require('fs');
+const fs = require('fs').promises; // async file read
 const path = require('path');
-
 
 async function githubCommand(sock, chatId, message) {
   try {
-    const res = await fetch('https://api.github.com/repos/mruniquehacker/Knightbot-md');
-    if (!res.ok) throw new Error('Error fetching repository data');
+    const res = await fetch('https://api.github.com/repos/Biharkebahubali/CODE-BREAKER-BOT');
+    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
     const json = await res.json();
 
     let txt = `*乂  CODE_BREAKER BOT 乂*\n\n`;
@@ -20,14 +19,14 @@ async function githubCommand(sock, chatId, message) {
     txt += `✩  *Stars* : ${json.stargazers_count}\n\n`;
     txt += `💥 *CODE_BREAKER*`;
 
-    // Use the local asset image
     const imgPath = path.join(__dirname, '../assets/bot_image.jpg');
-    const imgBuffer = fs.readFileSync(imgPath);
+    const imgBuffer = await fs.readFile(imgPath); // async
 
     await sock.sendMessage(chatId, { image: imgBuffer, caption: txt }, { quoted: message });
   } catch (error) {
-    await sock.sendMessage(chatId, { text: '❌ Error fetching repository information.' }, { quoted: message });
+    console.error('GitHub command error:', error);
+    await sock.sendMessage(chatId, { text: '❌ जानकारी प्राप्त करने में त्रुटि हुई।' }, { quoted: message });
   }
 }
 
-module.exports = githubCommand; 
+module.exports = githubCommand;

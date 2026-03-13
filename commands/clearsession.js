@@ -8,7 +8,7 @@ const channelInfo = {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363161513685998@newsletter',
+            newsletterJid: '120363424488902820@newsletter',
             newsletterName: 'CODE_BREAKER',
             serverMessageId: -1
         }
